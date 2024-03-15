@@ -1,4 +1,4 @@
-package com.example.simpleviewmodel.ui.navigation
+package com.example.simpletoucn.ui.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack

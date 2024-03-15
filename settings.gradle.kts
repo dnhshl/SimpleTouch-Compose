@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SimpleViewModel"
+rootProject.name = "SimpleTouch"
 include(":app")
  

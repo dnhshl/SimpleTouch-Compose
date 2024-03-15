@@ -1,4 +1,4 @@
-package com.example.simpleviewmodel.ui.navigation
+package com.example.simpletoucn.ui.navigation
 
 import android.util.Log
 import androidx.compose.foundation.layout.Box
@@ -14,7 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
-import com.example.simpleviewmodel.R
+import com.example.simpletoucn.R
 
 
 @Composable

@@ -1,4 +1,4 @@
-package com.example.simpleviewmodel
+package com.example.simpletoucn
 
 import org.junit.Test
 

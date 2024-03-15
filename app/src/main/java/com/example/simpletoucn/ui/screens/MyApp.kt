@@ -1,6 +1,5 @@
-package com.example.simpleviewmodel.ui.screens
+package com.example.simpletoucn.ui.screens
 
-import android.util.Log
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -8,7 +7,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Snackbar
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.SnackbarResult
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -23,14 +21,14 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.dialog
 import androidx.navigation.compose.rememberNavController
-import com.example.simpleviewmodel.model.MainViewModel
-import com.example.simpleviewmodel.ui.navigation.MyMenu
-import com.example.simpleviewmodel.ui.navigation.MyNavBar
-import com.example.simpleviewmodel.ui.navigation.MyTopBar
-import com.example.simpleviewmodel.ui.navigation.NavDestination
-import com.example.simpleviewmodel.ui.navigation.bottomBarNavDestinations
-import com.example.simpleviewmodel.ui.navigation.dialogDestinations
-import com.example.simpleviewmodel.ui.navigation.navDestinations
+import com.example.simpletoucn.model.MainViewModel
+import com.example.simpletoucn.ui.navigation.MyMenu
+import com.example.simpletoucn.ui.navigation.MyNavBar
+import com.example.simpletoucn.ui.navigation.MyTopBar
+import com.example.simpletoucn.ui.navigation.NavDestination
+import com.example.simpletoucn.ui.navigation.bottomBarNavDestinations
+import com.example.simpletoucn.ui.navigation.dialogDestinations
+import com.example.simpletoucn.ui.navigation.navDestinations
 import kotlinx.coroutines.launch
 
 @Composable

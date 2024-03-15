@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SimpleViewModel</string>
+    <string name="app_name">SimpleTouch</string>
 
     <string name="settingsScreenTitle">Einstellungen</string>
     <string name="detailsScreenTitle">Details</string>
@@ -15,6 +15,19 @@
     <string name="menuItem1">Item 1</string>
     <string name="menuItem2">Item 2</string>
     <string name="menuItem3">Info</string>
+
+
+    <string name="colorPickerDialogTitle">Farbe auswählen</string>
+
+    <string name="dismissButton">Abbruch</string>
+    <string name="confirmButton">OK</string>
+
+    <string name="adjustCircleColor">Kreisfarbe</string>
+    <string name="adjustBackgroundColor">Hintergrund</string>
+    <string name="adjustNumberClicks">Anzahl Klicks</string>
+    <string name="adjustCircleRadius">Radius</string>
+
+    <string name="scoreListEntry">%.1f ms/Klick, %d Klicks mit Radius %.0f</string>
 
 
 </resources>

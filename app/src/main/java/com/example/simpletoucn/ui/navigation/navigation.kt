@@ -1,4 +1,4 @@
-package com.example.simpleviewmodel.ui.navigation
+package com.example.simpletoucn.ui.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
@@ -11,15 +11,15 @@ import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavController
-import com.example.simpleviewmodel.R
-import com.example.simpleviewmodel.model.MainViewModel
-import com.example.simpleviewmodel.ui.screens.AlertDialogScreen
-import com.example.simpleviewmodel.ui.screens.DetailsScreen
-import com.example.simpleviewmodel.ui.screens.HomeScreen
-import com.example.simpleviewmodel.ui.screens.InfoScreen
-import com.example.simpleviewmodel.ui.screens.OtherScreen1
-import com.example.simpleviewmodel.ui.screens.OtherScreen2
-import com.example.simpleviewmodel.ui.screens.SettingsScreen
+import com.example.simpletoucn.R
+import com.example.simpletoucn.model.MainViewModel
+import com.example.simpletoucn.ui.screens.AlertDialogScreen
+import com.example.simpletoucn.ui.screens.DetailsScreen
+import com.example.simpletoucn.ui.screens.HomeScreen
+import com.example.simpletoucn.ui.screens.InfoScreen
+import com.example.simpletoucn.ui.screens.OtherScreen1
+import com.example.simpletoucn.ui.screens.OtherScreen2
+import com.example.simpletoucn.ui.screens.SettingsScreen
 
 sealed class NavDestination(
     val route: String,
