@@ -4,7 +4,9 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
+import com.example.simpletoucn.R
 import com.example.simpletoucn.model.MainViewModel
 
 @Composable
@@ -14,10 +16,10 @@ fun InfoScreen(
 ) {
     AlertDialog(
         title = {
-            Text(text = "Wichtige Info")
+            Text(text = stringResource(id = R.string.infoScreenTitle))
         },
         text = {
-            Text(text = "Gehen Sie nicht über Los!")
+            Text(text = stringResource(id = R.string.infoScreenText))
         },
         onDismissRequest = { navController.popBackStack() },
         confirmButton = {

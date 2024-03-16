@@ -24,8 +24,8 @@ import androidx.navigation.compose.rememberNavController
 import com.example.simpletoucn.model.MainViewModel
 import com.example.simpletoucn.ui.navigation.MyMenu
 import com.example.simpletoucn.ui.navigation.MyNavBar
+import com.example.simpletoucn.ui.navigation.MyNavDestination
 import com.example.simpletoucn.ui.navigation.MyTopBar
-import com.example.simpletoucn.ui.navigation.NavDestination
 import com.example.simpletoucn.ui.navigation.bottomBarNavDestinations
 import com.example.simpletoucn.ui.navigation.dialogDestinations
 import com.example.simpletoucn.ui.navigation.navDestinations
@@ -72,7 +72,7 @@ fun MyApp() {
     ) { paddingValues ->
         NavHost(
             navController = navController,
-            startDestination = NavDestination.Home.route,
+            startDestination = MyNavDestination.Home.route,
             modifier = Modifier
                 .padding(paddingValues)
         ) {

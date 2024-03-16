@@ -35,26 +35,13 @@ fun MyMenu( showMenu: Boolean = false,
             onDismissRequest = { onToggleMenu() }
         ) {
             // Hier können die Menu Items eingefügt werden
+
             DropdownMenuItem(
-                text = { Text(stringResource(id = R.string.menuItem1)) },
-                onClick = {
-                    Log.i(">>>>", "Menu Item 1 geklickt")
-                    onToggleMenu()
-                }
-            )
-            DropdownMenuItem(
-                text = { Text(stringResource(id = R.string.menuItem2)) },
-                onClick = {
-                    Log.i(">>>>", "Menu Item 2 geklickt")
-                    onToggleMenu()
-                }
-            )
-            DropdownMenuItem(
-                text = { Text(stringResource(id = R.string.menuItem3)) },
+                text = { Text(stringResource(id = R.string.menuInfo)) },
                 onClick = {
                     Log.i(">>>>", "Info")
                     onToggleMenu()
-                    navController.navigate(NavDestination.Info.route)
+                    navController.navigate(MyNavDestination.Info.route)
                 }
             )
         }

@@ -67,9 +67,7 @@ fun ListItemCard(
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-
             Text(stringResource(id = R.string.scoreListEntry, score.score, score.nClicks, score.radius ))
-
         }
     }
 }

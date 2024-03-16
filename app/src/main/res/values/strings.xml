@@ -2,20 +2,17 @@
     <string name="app_name">SimpleTouch</string>
 
     <string name="settingsScreenTitle">Einstellungen</string>
-    <string name="detailsScreenTitle">Details</string>
-    <string name="homeScreenTitle">Home</string>
+    <string name="top20ScreenTitle">Highscores</string>
+    <string name="homeScreenTitle">Klick schneller!</string>
 
     <string name="otherScreen1Title">Fullscreen 1</string>
     <string name="otherScreen2Title">Fullscreen 2</string>
 
     <string name="settingsScreenLabel">Config</string>
-    <string name="detailsScreenLabel">Details</string>
+    <string name="top20ScreenLabel">Top20</string>
     <string name="homeScreenLabel">Home</string>
 
-    <string name="menuItem1">Item 1</string>
-    <string name="menuItem2">Item 2</string>
-    <string name="menuItem3">Info</string>
-
+    <string name="menuInfo">Info</string>
 
     <string name="colorPickerDialogTitle">Farbe auswählen</string>
 
@@ -29,5 +26,20 @@
 
     <string name="scoreListEntry">%.1f ms/Klick, %d Klicks mit Radius %.0f</string>
 
+    <string name="startGameInstruction">Klicken Sie auf den Kreis, um das Spiel zu starten.</string>
+
+    <string name="infoScreenTitle">Spielregeln</string>
+    <string name="infoScreenText">
+        <![CDATA[
+        Klicken Sie auf den Kreis, um das Spiel zu starten.
+        Der Kreis wechselt nach jedem Klick seine Position. Versuchen Sie, so schnell wie möglich
+        zu klicken.
+
+        Das Spiel endet, wenn Sie eine vorgegebene Anzahl an Klicks geschafft haben.
+
+        Konfigurieren Sie die Größe des Kreises, die Farben und die Anzahl der Klicks in den Einstellungen.
+        Knacken Sie Ihren Highscore!
+        ]]>
+    </string>
 
 </resources>

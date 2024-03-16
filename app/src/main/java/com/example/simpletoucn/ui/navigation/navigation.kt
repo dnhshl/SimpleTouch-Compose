@@ -2,11 +2,11 @@ package com.example.simpletoucn.ui.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.outlined.CheckCircle
 import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.List
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -21,7 +21,7 @@ import com.example.simpletoucn.ui.screens.OtherScreen1
 import com.example.simpletoucn.ui.screens.OtherScreen2
 import com.example.simpletoucn.ui.screens.SettingsScreen
 
-sealed class NavDestination(
+sealed class MyNavDestination(
     val route: String,
     val title: Int = 0,
     val label: Int = 0,
@@ -35,7 +35,7 @@ sealed class NavDestination(
 
     // BottomNavScreens
 
-    object Home : NavDestination(
+    object Home : MyNavDestination(
         route = "home",                          // eindeutige Kennung
         title = R.string.homeScreenTitle,        // Titel in der TopBar
         label = R.string.homeScreenLabel,        // Label in der BottomBar
@@ -45,16 +45,16 @@ sealed class NavDestination(
         content = { navController, viewModel -> HomeScreen(navController, viewModel) }
     )
 
-    object Details : NavDestination(
-        route = "detail",
-        title = R.string.detailsScreenTitle,
-        label = R.string.detailsScreenLabel,
-        selectedIcon = Icons.Filled.CheckCircle,
-        unselectedIcon = Icons.Outlined.CheckCircle,
+    object Top20 : MyNavDestination(
+        route = "top20",
+        title = R.string.top20ScreenTitle,
+        label = R.string.top20ScreenLabel,
+        selectedIcon = Icons.Filled.List,
+        unselectedIcon = Icons.Outlined.List,
         content = { navController, viewModel -> DetailsScreen(navController, viewModel) }
     )
 
-    object Settings : NavDestination(
+    object Settings : MyNavDestination(
         route = "settings",
         title = R.string.settingsScreenTitle,
         label = R.string.settingsScreenLabel,
@@ -66,14 +66,14 @@ sealed class NavDestination(
     // FullScreens (benötigen keine Icons und kein Label;
     // dafür aber showArrowBack = true für den Zurück Pfeil in der TopBar
 
-    object Screen1 : NavDestination(
+    object Screen1 : MyNavDestination(
         route = "other1",
         title = R.string.otherScreen1Title,
         showArrowBack = true,
         content = { navController, viewModel -> OtherScreen1(navController, viewModel) }
     )
 
-    object Screen2 : NavDestination(
+    object Screen2 : MyNavDestination(
         route = "other2",
         title = R.string.otherScreen2Title,
         showArrowBack = true,
@@ -82,12 +82,12 @@ sealed class NavDestination(
 
     // Dialog Screens
 
-    object Info : NavDestination(
+    object Info : MyNavDestination(
         route = "info",
         content = { navController, viewModel -> InfoScreen(navController, viewModel) }
     )
 
-    object AlertDialog : NavDestination(
+    object AlertDialog : MyNavDestination(
         route = "alert_dialog",
         content = { navController, viewModel -> AlertDialogScreen(navController, viewModel) }
     )
@@ -96,18 +96,18 @@ sealed class NavDestination(
 
 // Hier alle Bildschirme listen, über die in der Bottom Bar navigiert werden soll
 val bottomBarNavDestinations = listOf (
-    NavDestination.Home,
-    NavDestination.Details,
-    NavDestination.Settings,
+    MyNavDestination.Home,
+    MyNavDestination.Top20,
+    MyNavDestination.Settings,
 )
 
 
 // Hier alle Bildschirme listen, die als FullScreen Bildschirm angesprungen werden sollen
 // wenn es keine gibt, dann
-// val otherDestinations = emptyList<NavDestination>()
+// val otherDestinations = emptyList<MyNavDestination>()
 val otherDestinations = listOf (
-    NavDestination.Screen1,
-    NavDestination.Screen2
+    MyNavDestination.Screen1,
+    MyNavDestination.Screen2
 )
 
 
@@ -116,9 +116,9 @@ val navDestinations = bottomBarNavDestinations + otherDestinations
 
 // Hier alle Dialogbilschirme listen
 // wenn es keine gibt, dann
-// val dialogDestinations = emptyList<NavDestination>()
+// val dialogDestinations = emptyList<MyNavDestination>()
 val dialogDestinations = listOf (
-    NavDestination.Info,
-    NavDestination.AlertDialog
+    MyNavDestination.Info,
+    MyNavDestination.AlertDialog
 )
 

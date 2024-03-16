@@ -5,7 +5,6 @@ import android.content.Context
 import android.util.Log
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.toArgb
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.floatPreferencesKey
 import androidx.datastore.preferences.core.intPreferencesKey
@@ -13,16 +12,15 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.simpletoucn.R
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import java.util.UUID
 
 val Context.dataStore by preferencesDataStore(name = "settings")
 
@@ -40,13 +38,16 @@ data class ScoreListItem(
     val time: Long = 0L,
 ) {
     val score: Float = time.toFloat() / nClicks
+
     override fun toString(): String {
-        return "%.1f ms/Click bei %d Klicks mit Radius %d".format(score, nClicks, radius.toInt())
+        return "%.1f ms/Klick bei %d Klicks mit Radius %d".format(score, nClicks, radius.toInt())
     }
 }
 
 
 class MainViewModel(application: Application): AndroidViewModel(application) {
+
+    var stringResourceVariable = UiText.StringResource(R.string.scoreListEntry)
 
     private val dataStore = application.dataStore
 
@@ -140,6 +141,16 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
+    // Definition im ViewModel
+    private var _introScreen = MutableStateFlow(true)
+    val introScreen: StateFlow<Boolean> = _introScreen
+
+    fun disableIntroScreen() {
+        _introScreen.value = false
+    }
+
+
+
 
 
     // Snackbar
@@ -160,7 +171,3 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     }
 }
 
-fun Color.toHexString(): String {
-    val argb = this.toArgb()
-    return String.format("#%08X", argb)
-}
