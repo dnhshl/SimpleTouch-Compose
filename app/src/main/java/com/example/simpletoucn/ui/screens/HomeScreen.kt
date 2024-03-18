@@ -87,7 +87,7 @@ fun HomeScreen(
                 clickCount = 0
                 circlePosition = Offset(canvasSize.width / 2f, canvasSize.height / 2f)
                 // Spielergebnis erfassen
-                val score = ScoreListItem(time = time, nClicks = clickCount, radius = circleRadius)
+                val score = ScoreListItem(time = time, nClicks = numberClicks, radius = circleRadius)
                 // Spielergebnis im ViewModel speichern
                 viewModel.setCurrentScore(score)
                 // zum Result Screen navigieren

@@ -2,6 +2,7 @@ package com.example.simpletoucn.model
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.ui.graphics.Color
 import androidx.datastore.preferences.core.edit
@@ -46,6 +47,7 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     private var _currentScore = MutableStateFlow(ScoreListItem())
     val currentScore: StateFlow<ScoreListItem> = _currentScore
     fun setCurrentScore(score: ScoreListItem) {
+        Log.i(">>>", "currentScore $score")
         _currentScore.value = score
     }
 
