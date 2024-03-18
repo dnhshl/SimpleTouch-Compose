@@ -2,7 +2,6 @@ package com.example.simpletoucn.model
 
 import android.app.Application
 import android.content.Context
-import android.util.Log
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.ui.graphics.Color
 import androidx.datastore.preferences.core.edit
@@ -12,7 +11,6 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.simpletoucn.R
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

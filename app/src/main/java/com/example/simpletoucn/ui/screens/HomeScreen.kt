@@ -6,9 +6,7 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.SnackbarDuration
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -22,12 +20,9 @@ import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.IntSize
 import androidx.navigation.NavController
-import com.example.simpletoucn.R
 import com.example.simpletoucn.model.MainViewModel
 import com.example.simpletoucn.model.ScoreListItem
-import com.example.simpletoucn.model.UiText
 import com.example.simpletoucn.model.calcDistance
-import com.example.simpletoucn.model.isCircleClick
 import com.example.simpletoucn.model.randomOffset
 import com.example.simpletoucn.ui.navigation.MyNavDestination
 
