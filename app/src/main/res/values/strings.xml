@@ -5,9 +5,6 @@
     <string name="top20ScreenTitle">Highscores</string>
     <string name="homeScreenTitle">Klick schneller!</string>
 
-    <string name="otherScreen1Title">Fullscreen 1</string>
-    <string name="otherScreen2Title">Fullscreen 2</string>
-
     <string name="settingsScreenLabel">Config</string>
     <string name="top20ScreenLabel">Top20</string>
     <string name="homeScreenLabel">Home</string>
@@ -16,8 +13,8 @@
 
     <string name="colorPickerDialogTitle">Farbe auswählen</string>
 
-    <string name="dismissButton">Abbruch</string>
-    <string name="confirmButton">OK</string>
+    <string name="dismissButton">Nein</string>
+    <string name="confirmButton">Ja</string>
 
     <string name="adjustCircleColor">Kreisfarbe</string>
     <string name="adjustBackgroundColor">Hintergrund</string>
@@ -39,6 +36,15 @@
 
         Konfigurieren Sie die Größe des Kreises, die Farben und die Anzahl der Klicks in den Einstellungen.
         Knacken Sie Ihren Highscore!
+        ]]>
+    </string>
+
+    <string name="resultScreenTitle">Ihre Reaktionszeit</string>
+    <string name="resultScreenText">
+        <![CDATA[
+        Sie haben für %d Klicks eine Gesamtzeit von %d ms gebraucht. Das macht
+        \n%.1f ms/KLick.
+        \nSoll das Ergebnis in die HighScore Liste aufgenommen werden?
         ]]>
     </string>
 

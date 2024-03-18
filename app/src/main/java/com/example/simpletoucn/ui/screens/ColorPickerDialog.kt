@@ -35,6 +35,10 @@ import com.github.skydoves.colorpicker.compose.HsvColorPicker
 import com.github.skydoves.colorpicker.compose.drawColorIndicator
 import com.github.skydoves.colorpicker.compose.rememberColorPickerController
 
+// Color Picker Dialog unter Nutzung der ColorPicker Compose Library
+// https://github.com/skydoves/colorpicker-compose
+
+
 @Composable
 fun ColorPickerDialog(
     title: String,
@@ -44,7 +48,6 @@ fun ColorPickerDialog(
 ) {
     var color by remember { mutableStateOf(initialColor) }
     val controller = rememberColorPickerController()
-
 
     Dialog(
         onDismissRequest = onDismissRequest

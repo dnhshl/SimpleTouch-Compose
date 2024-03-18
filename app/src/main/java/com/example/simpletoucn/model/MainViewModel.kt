@@ -38,18 +38,20 @@ data class ScoreListItem(
     val time: Long = 0L,
 ) {
     val score: Float = time.toFloat() / nClicks
-
-    override fun toString(): String {
-        return "%.1f ms/Klick bei %d Klicks mit Radius %d".format(score, nClicks, radius.toInt())
-    }
 }
 
 
 class MainViewModel(application: Application): AndroidViewModel(application) {
 
-    var stringResourceVariable = UiText.StringResource(R.string.scoreListEntry)
-
     private val dataStore = application.dataStore
+
+    private var _currentScore = MutableStateFlow(ScoreListItem())
+    val currentScore: StateFlow<ScoreListItem> = _currentScore
+    fun setCurrentScore(score: ScoreListItem) {
+        _currentScore.value = score
+    }
+
+
 
     private val scoreListKey = stringPreferencesKey("score_list_key")
 
@@ -85,7 +87,6 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     val circleColor = dataStore.data
         .map { preferences ->
             val hexColor = preferences[circleColorKey] ?: Color.Red.toHexString()
-            Log.i(">>>","hexColor from Datastore $hexColor")
             Color(android.graphics.Color.parseColor(hexColor))
         }
 
@@ -103,7 +104,6 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     val backgroundColor = dataStore.data
         .map { preferences ->
             val hexColor = preferences[backgroundColorKey] ?: Color.Red.toHexString()
-            Log.i(">>>","hexColor from Datastore $hexColor")
             Color(android.graphics.Color.parseColor(hexColor))
         }
     fun setBackgroundColor(color: Color) {
@@ -119,7 +119,6 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
         .map { preferences ->
             preferences[circleRadiusKey] ?: 50f
         }
-        //.onStart { emit(-1f) }
     fun setCircleRadius(value: Float) {
         viewModelScope.launch {
             dataStore.edit { preferences ->
@@ -141,7 +140,6 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-    // Definition im ViewModel
     private var _introScreen = MutableStateFlow(true)
     val introScreen: StateFlow<Boolean> = _introScreen
 
@@ -166,7 +164,6 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     }
 
     fun dismissSnackbar() {
-        Log.i(">>>", "Snackbar dismissed")
         _snackbarState.value = null
     }
 }

@@ -8,6 +8,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntSize
+import kotlin.math.sqrt
 import kotlin.random.Random
 
 
@@ -16,6 +17,12 @@ fun Color.toHexString(): String {
     return String.format("#%08X", argb)
 }
 
+
+fun calcDistance(pos1: Offset, pos2:Offset) : Float {
+    val dx = pos1.x - pos2.x
+    val dy = pos1.y - pos2.y
+    return sqrt(dx*dx + dy*dy)
+}
 
 
 fun isCircleClick(circlePosition: Offset, clickPosition: Offset, radius: Float): Boolean {

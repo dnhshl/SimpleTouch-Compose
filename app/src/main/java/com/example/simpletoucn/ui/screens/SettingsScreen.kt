@@ -75,7 +75,6 @@ fun SettingsScreen(
         }
 
 
-
         Text(stringResource(id = R.string.adjustNumberClicks))
 
         if (numberClicks > 0) {
@@ -129,7 +128,7 @@ fun ColorDisplayRow(color: Color, text: String = "", circle:Boolean = true, onEd
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        // Circle with color        
+        // Canvas with Circle or Square
         Canvas(modifier = Modifier.size(70.dp)) {
             if (circle) {
                 drawCircle(

@@ -13,12 +13,10 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavController
 import com.example.simpletoucn.R
 import com.example.simpletoucn.model.MainViewModel
-import com.example.simpletoucn.ui.screens.AlertDialogScreen
-import com.example.simpletoucn.ui.screens.DetailsScreen
+import com.example.simpletoucn.ui.screens.HighscoreScreen
 import com.example.simpletoucn.ui.screens.HomeScreen
 import com.example.simpletoucn.ui.screens.InfoScreen
-import com.example.simpletoucn.ui.screens.OtherScreen1
-import com.example.simpletoucn.ui.screens.OtherScreen2
+import com.example.simpletoucn.ui.screens.ResultDialogScreen
 import com.example.simpletoucn.ui.screens.SettingsScreen
 
 sealed class MyNavDestination(
@@ -51,7 +49,7 @@ sealed class MyNavDestination(
         label = R.string.top20ScreenLabel,
         selectedIcon = Icons.Filled.List,
         unselectedIcon = Icons.Outlined.List,
-        content = { navController, viewModel -> DetailsScreen(navController, viewModel) }
+        content = { navController, viewModel -> HighscoreScreen(navController, viewModel) }
     )
 
     object Settings : MyNavDestination(
@@ -66,19 +64,6 @@ sealed class MyNavDestination(
     // FullScreens (benötigen keine Icons und kein Label;
     // dafür aber showArrowBack = true für den Zurück Pfeil in der TopBar
 
-    object Screen1 : MyNavDestination(
-        route = "other1",
-        title = R.string.otherScreen1Title,
-        showArrowBack = true,
-        content = { navController, viewModel -> OtherScreen1(navController, viewModel) }
-    )
-
-    object Screen2 : MyNavDestination(
-        route = "other2",
-        title = R.string.otherScreen2Title,
-        showArrowBack = true,
-        content = { navController, viewModel -> OtherScreen2(navController, viewModel) }
-    )
 
     // Dialog Screens
 
@@ -87,12 +72,11 @@ sealed class MyNavDestination(
         content = { navController, viewModel -> InfoScreen(navController, viewModel) }
     )
 
-    object AlertDialog : MyNavDestination(
-        route = "alert_dialog",
-        content = { navController, viewModel -> AlertDialogScreen(navController, viewModel) }
+    object ScoreResult : MyNavDestination(
+        route = "score_result",
+        content = { navController, viewModel -> ResultDialogScreen(navController, viewModel) }
     )
 }
-
 
 // Hier alle Bildschirme listen, über die in der Bottom Bar navigiert werden soll
 val bottomBarNavDestinations = listOf (
@@ -105,20 +89,16 @@ val bottomBarNavDestinations = listOf (
 // Hier alle Bildschirme listen, die als FullScreen Bildschirm angesprungen werden sollen
 // wenn es keine gibt, dann
 // val otherDestinations = emptyList<MyNavDestination>()
-val otherDestinations = listOf (
-    MyNavDestination.Screen1,
-    MyNavDestination.Screen2
-)
-
+val otherDestinations = emptyList<MyNavDestination>()
 
 val navDestinations = bottomBarNavDestinations + otherDestinations
 
 
-// Hier alle Dialogbilschirme listen
+// Hier alle Dialogbildschirme listen
 // wenn es keine gibt, dann
 // val dialogDestinations = emptyList<MyNavDestination>()
 val dialogDestinations = listOf (
     MyNavDestination.Info,
-    MyNavDestination.AlertDialog
+    MyNavDestination.ScoreResult
 )
 
